@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="OpenFilter">
+    <output-path>$PROJECT_DIR$/out/artifacts/OpenFilter</output-path>
+    <root id="archive" name="OpenFilter.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="module-output" name="OpenFilter" />
+    </root>
+  </artifact>
+</component>
