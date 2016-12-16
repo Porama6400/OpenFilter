@@ -1,0 +1,46 @@
+#DEFAULT CONFIG
+#TEST COMMENT AND EMPTY LINE
+#CHANGE 'FILTER' to 'FILTER_OFF' to disable
+
+#ANTI VERSION CHECK
+FILTER
+TARGET PLAYER
+CMDS
+-ver
+-version
+-about
+-bukkit:ver
+-bukkit:version
+-bukkit:about
+-icanhasbukkit
+ACTION
+-FAKE_NOCOMMAND
+END
+
+NEXT
+
+#ANTI PLUGIN STEAL
+FILTER
+TARGET PLAYER
+CMDS
+-pl
+-plugins
+-bukkit:pl
+-bukkit:plugins
+ACTION
+-FAKE_NOCOMMAND
+END
+
+NEXT
+
+#ANTI HELP
+FILTER
+TARGET PLAYER
+CMDS
+-help
+-?
+-bukkit:help
+-bukkit:?
+ACTION
+-FAKE_NOCOMMAND
+END
