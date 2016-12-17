@@ -37,6 +37,10 @@ public abstract class Filter {
         bypassPermissions.addAll(perms);
     }
 
+    public List<Permission> getPermissions(){
+        return bypassPermissions;
+    }
+
     public void registerPermissions() {
         for (Permission s : bypassPermissions) {
             try {
