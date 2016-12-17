@@ -21,6 +21,11 @@ public class OpenFilterPlugin extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         Bukkit.getPluginManager().registerEvents(ofcl,this);
+        reloadFilters();
+    }
+
+    public void reloadFilters(){
+        filterList = new ArrayList<>();
         new TextBasedFilterProfileLoader().load();
     }
 
