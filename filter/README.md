@@ -3,4 +3,4 @@
 
 #### File type ####
 
-*.tbfp  : Text based filter profile (designed to edit easily with notepad)
+*.tbfp  : Text based filter profile ([Click here for more detail](https://github.com/UnnamedCheese/OpenFilter/wiki/Text-Based-Filter-Profile---TBFP))
