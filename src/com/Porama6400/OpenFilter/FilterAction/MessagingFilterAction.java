@@ -2,6 +2,7 @@ package com.Porama6400.OpenFilter.FilterAction;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionDefault;
 
 /**
  * Created by Porama6400
