@@ -2,9 +2,11 @@
 
 #### Official Filters ####
 
+(to download use : **Right click -> Save link as...**)
 
-- **AntiPluginStealer.tbfp** : As it's name , It's use to protect your server from plugin stealer
-- **AntiHelp.tbfp** : Recommend to use if you don't want to customize help command
+
+- [**AntiPluginStealer.tbfp**](https://raw.githubusercontent.com/UnnamedCheese/OpenFilter/master/filter/AntiHelp.tbfp) : As it's name , It's use to protect your server from plugin stealer
+- [**AntiHelp.tbfp**](https://raw.githubusercontent.com/UnnamedCheese/OpenFilter/master/filter/AntiHelp.tbfp) : Recommend to use if you don't want to customize help command
 
 
 - **Test.tbfp** : Just for debugging , Not recommended to use
