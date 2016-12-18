@@ -1,0 +1,14 @@
+FILTER
+TARGET PLAYER
+PERMISSIONS
+-openfilter.admin
+CMDS
+-pl
+-plugins
+-bukkit:pl
+-bukkit:plugins
+ACTION
+-CANCEL
+#CUSTOMIZE PLUGIN LIST HERE , SEPERATE NAME WITH SPACE
+-FAKE_PLUGINS Plugin1 Plugin2 Plugin3
+END
