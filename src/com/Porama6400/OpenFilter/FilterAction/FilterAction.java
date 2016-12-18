@@ -37,7 +37,9 @@ public interface FilterAction {
                     else return new BroadcastFilterAction(msg);
                 } catch (IndexOutOfBoundsException ex) {
                 }
-            //case "":
+                break;
+            case "FAKE_PLUGINS":
+                return new FakePluginFilterAction(parts);
         }
         throw new InvalidFilterFile("Unknown filter action");
     }
