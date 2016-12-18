@@ -4,7 +4,7 @@ Open-source command blocking plugin (Chat filtering in future)
 
 
 ### Download : [Click here](https://github.com/UnnamedCheese/OpenFilter/raw/master/out/artifacts/OpenFilter/OpenFilter.jar) ###
-### Example Filter : [here](https://github.com/UnnamedCheese/OpenFilter/tree/master/filter) ###
+### Example & Preset Filter : [here](https://github.com/UnnamedCheese/OpenFilter/tree/master/filter) ###
 
 
 ----------
