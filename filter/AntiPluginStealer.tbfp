@@ -1,0 +1,22 @@
+#ANTI PLUGIN & SERVER VERSION STEALER
+
+FILTER
+TARGET PLAYER
+TAB_COMPLETE BLOCK
+PERMISSIONS
+-openfilter.admin
+CMDS
+-ver
+-bukkit:ver
+-version
+-bukkit:version
+-about
+-bukkit:about
+-icanhasbukkit
+-pl
+-bukkit:pl
+-plugins
+-bukkit:plugins
+ACTION
+-FAKE_NOCOMMAND
+END
