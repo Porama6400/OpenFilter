@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Porama6400
  */
-public interface FilterLoader {
+public interface IFilterLoader {
     String getFileExtension();
 
    default List<File> getFiles() {

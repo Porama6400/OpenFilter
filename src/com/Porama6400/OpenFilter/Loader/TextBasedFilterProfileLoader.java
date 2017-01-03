@@ -13,7 +13,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextBasedFilterProfileLoader implements FilterLoader {
+public class TextBasedFilterProfileLoader implements IFilterLoader {
 
     @Override
     public String getFileExtension() {
@@ -126,7 +126,6 @@ public class TextBasedFilterProfileLoader implements FilterLoader {
             OpenFilterPlugin.plugin.RegisterFilter(filter);
             String str = readNextIgnoreEmptyLine(buff);
             // Should be String "END" here
-            System.out.println(str);
             if (str == null) return;
             if (str.equalsIgnoreCase("NEXT")) continue;
             return;

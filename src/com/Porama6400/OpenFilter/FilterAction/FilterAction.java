@@ -41,7 +41,9 @@ public interface FilterAction {
             case "FAKE_PLUGINS":
                 return new FakePluginFilterAction(parts);
             case "REDIRECT":
-                return new CommandRedirectAction(parts[1], parts[2]);
+                return new CommandRedirectFilterAction(parts[1]);
+            case"EXECUTE":
+                return new ExecuteCommandFilterAction(parts);
         }
         throw new InvalidFilterFile("Unknown filter action");
     }

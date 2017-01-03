@@ -1,9 +1,26 @@
 name: OpenFilter
 main: com.Porama6400.OpenFilter.OpenFilterPlugin
+author: Porama6400
 version: 1.5
 description: >
              FILTER UNWANTED COMMAND ACCESS!
 
 commands:
   filter:
-    description: filzther
+    description: OpenFilter command
+    permission: openfilter.command
+    aliases: [openfilter,of,ofil,ofilter]
+
+permissions:
+  openfilter.admin:
+    description: Give access to all admin command
+    children:
+      openfilter.generate: true
+  openfilter.generate:
+    description: Give access to command that will generate filter file to hide all command
+    default: op
+    children:
+     openfilter.command: true
+  openfilter.command:
+    description: Internal permission to process command
+    default: false
