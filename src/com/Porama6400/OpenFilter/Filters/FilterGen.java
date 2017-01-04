@@ -35,6 +35,10 @@ public class FilterGen {
                 br.newLine();
                 br.write("TAB_COMPLETE BLOCK");
                 br.newLine();
+                br.write("PERMISSIONS");
+                br.newLine();
+                br.write("-openfilter.bypass");
+                br.newLine();
                 br.write("CMDS");
                 Map<String, Map<String, Object>> str = plugin.getDescription().getCommands();
                 for (Map.Entry<String, Map<String, Object>> entry : str.entrySet()) {
