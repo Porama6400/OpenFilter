@@ -34,42 +34,11 @@ public class OpenFilterCommandListener implements Listener {
             args.remove(0);
         }
         outerLoop:
-        for (Filter filter : OpenFilterPlugin.plugin.getFilterList()) {
+        for (Filter filter : OpenFilterPlugin.getInstance().getFilterList()) {
             for (Permission perm : filter.getPermissions()) {
                 if (sender.hasPermission(perm)) continue outerLoop;
             }
             filter.execute(sender, command, args, cancellable);
-        }
-    }
-
-    @EventHandler
-    public void onTabComplete(TabCompleteEvent e) {
-        outerLoop:
-        for (Filter filter : OpenFilterPlugin.plugin.getFilterList()) {
-            if (filter instanceof BasicCommandFilter) {
-                BasicCommandFilter bcf = (BasicCommandFilter) filter;
-                if (!bcf.isBlockTabComplete()) continue;
-                for (Permission perm : bcf.getPermissions()) {
-                    if (e.getSender().hasPermission(perm)) continue outerLoop;
-                }
-
-                for (String cmd : bcf.getFilteredCommands()) {
-                    if (e.getBuffer().toLowerCase().startsWith("/" + cmd.toLowerCase())) {
-                        e.setCancelled(true);
-                        return;
-                    }
-                }
-
-                List<String> toRemove = new ArrayList<>();
-                for (String cmd : bcf.getFilteredCommands()) {
-                    for (String tccmd : e.getCompletions()) {
-                        if (cmd.toLowerCase() == tccmd.toLowerCase()) {
-                            toRemove.add(tccmd);
-                        }
-                    }
-                }
-                e.getCompletions().removeAll(toRemove);
-            }
         }
     }
 }

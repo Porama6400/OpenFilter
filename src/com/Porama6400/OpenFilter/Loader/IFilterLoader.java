@@ -16,7 +16,7 @@ public interface IFilterLoader {
 
    default List<File> getFiles() {
         List<File> out = new ArrayList<>();
-        File folder = new File(OpenFilterPlugin.plugin.getDataFolder() + File.separator + "filters");
+        File folder = new File(OpenFilterPlugin.getInstance().getDataFolder() + File.separator + "filters");
         if (!folder.exists()) {
             folder.mkdirs();
             return out;

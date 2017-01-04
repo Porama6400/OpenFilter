@@ -15,13 +15,13 @@ import java.util.Map;
  * Created by Porama2 on 3/1/2017.
  */
 public class FilterGen {
-    public static final File folder = new File(OpenFilterPlugin.plugin.getDataFolder().getAbsolutePath() + File.separator + "generate");
+    public static final File folder = new File(OpenFilterPlugin.getInstance().getDataFolder().getAbsolutePath() + File.separator + "generate");
 
     public static void builds() {
         folder.mkdirs();
         for (Plugin plugin : Bukkit.getPluginManager().getPlugins()) {
             if (plugin.getDescription().getCommands() == null) continue;
-            File file = new File(folder.getAbsolutePath() + File.separator + plugin.getName() + "_FILTER");
+            File file = new File(folder.getAbsolutePath() + File.separator + plugin.getName() + "_FILTER.tbfp");
 
             try {
                 FileOutputStream fos = new FileOutputStream(file);
@@ -33,6 +33,8 @@ public class FilterGen {
                 br.newLine();
                 br.write("TARGET PLAYER");
                 br.newLine();
+                br.write("TAB_COMPLETE BLOCK");
+                br.newLine();
                 br.write("CMDS");
                 Map<String, Map<String, Object>> str = plugin.getDescription().getCommands();
                 for (Map.Entry<String, Map<String, Object>> entry : str.entrySet()) {
@@ -42,8 +44,8 @@ public class FilterGen {
                     br.newLine();
                     br.write("-" + plugin.getName().toLowerCase() + ":" + command);
                     List<String> aliases = (List<String>) entry.getValue().get("aliases");
-                    if(aliases == null) continue;
-                    for(String als : aliases){
+                    if (aliases == null) continue;
+                    for (String als : aliases) {
                         br.newLine();
                         br.write("-" + als);
                         br.newLine();

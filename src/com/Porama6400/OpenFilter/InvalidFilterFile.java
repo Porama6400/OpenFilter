@@ -11,6 +11,6 @@ public class InvalidFilterFile extends Exception {
 
     @Override
     public void printStackTrace() {
-        OpenFilterPlugin.plugin.getLogger().warning("ERROR: " + thisdata);
+        OpenFilterPlugin.getInstance().getLogger().warning("ERROR: " + thisdata);
     }
 }

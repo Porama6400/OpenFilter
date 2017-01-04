@@ -28,7 +28,7 @@ public class TextBasedFilterProfileLoader implements IFilterLoader {
                 LoadFilter(fis);
                 fis.close();
             } catch (IOException | InvalidFilterFile | IndexOutOfBoundsException e) {
-                OpenFilterPlugin.plugin.getLogger().warning("ERROR WHILE LOADING: " + file.getName());
+                OpenFilterPlugin.getInstance().getLogger().warning("ERROR WHILE LOADING: " + file.getName());
                 e.printStackTrace();
             }
         }
@@ -123,7 +123,7 @@ public class TextBasedFilterProfileLoader implements IFilterLoader {
                 }
             }
             Filter filter = new BasicCommandFilter(targetCmds, blockTabComplete, target, filterActions, permissions);
-            OpenFilterPlugin.plugin.RegisterFilter(filter);
+            OpenFilterPlugin.getInstance().RegisterFilter(filter);
             String str = readNextIgnoreEmptyLine(buff);
             // Should be String "END" here
             if (str == null) return;
