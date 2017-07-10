@@ -11,15 +11,14 @@ import java.util.List;
  */
 public class FakePluginFilterAction implements FilterAction {
     private String msg;
+
     public FakePluginFilterAction(String[] parts) {
-        //parts[0] = "FAKE_PLUGINS"
-        //Plugins (14): AsyncWorldEditInjector, Abukaya4FuN, AsyncWorldEdit, EnchantedCreeper, Essentials, OpenFilter, PluginManagerReloaded, CrackShot, ParticleLIB, BITS, TimingReport, WorldEdit, React, CrackLaser
-        int count = parts.length - 1;
+      int count = parts.length - 1;
         msg = "Plugins (" + count + "): ";
         msg += ChatColor.GREEN + parts[1];
-        if(parts.length > 2){
-            for(int i = 2;i<parts.length;i++){
-                msg+=ChatColor.RESET + ", " + ChatColor.GREEN + parts[i];
+        if (parts.length > 2) {
+            for (int i = 2; i < parts.length; i++) {
+                msg += ChatColor.RESET + ", " + ChatColor.GREEN + parts[i];
             }
         }
     }

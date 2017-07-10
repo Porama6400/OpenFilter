@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Porama6400
  */
 public interface FilterAction {
-    public static FilterAction load_TBFP(String data) throws InvalidFilterFile {
+    static FilterAction load_TBFP(String data) throws InvalidFilterFile {
         String[] parts;
         {
             if (data.contains(" ")) {
@@ -26,16 +26,16 @@ public interface FilterAction {
             case "REPLY":
             case "BROADCAST":
                 try {
-                    String msg = parts[1];
+                    StringBuilder msg = new StringBuilder(parts[1]);
                     for (int i = 2; i < parts.length; i++) {
-                        msg = msg + " " + parts[i];
+                        msg.append(" ").append(parts[i]);
                     }
-                    msg = ChatColor.translateAlternateColorCodes('&', msg);
+                    msg = new StringBuilder(ChatColor.translateAlternateColorCodes('&', msg.toString()));
 
                     if (parts[0] == "REPLY")
-                        return new ReplyFilterAction(msg);
-                    else return new BroadcastFilterAction(msg);
-                } catch (IndexOutOfBoundsException ex) {
+                        return new ReplyFilterAction(msg.toString());
+                    else return new BroadcastFilterAction(msg.toString());
+                } catch (IndexOutOfBoundsException ignored) {
                 }
                 break;
             case "FAKE_PLUGINS":

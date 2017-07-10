@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Porama2 on 4/1/2017.
  */
 public class ProtocolTabBlocker implements ITabBlocker {
-    HashMap<Player, String> requestMap = new HashMap<>();
+    private HashMap<Player, String> requestMap = new HashMap<>();
 
     public void Initialize() {
         PacketAdapter CBTabComplete = new PacketAdapter(new PacketAdapter.AdapterParameteters()

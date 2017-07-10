@@ -20,20 +20,6 @@ public class TextBasedFilterProfileLoader implements IFilterLoader {
         return ".tbfp";
     }
 
-    @Override
-    public void load() {
-        for (File file : getFiles()) {
-            try {
-                FileInputStream fis = new FileInputStream(file);
-                LoadFilter(fis);
-                fis.close();
-            } catch (IOException | InvalidFilterFile | IndexOutOfBoundsException e) {
-                OpenFilterPlugin.getInstance().getLogger().warning("ERROR WHILE LOADING: " + file.getName());
-                e.printStackTrace();
-            }
-        }
-    }
-
     public String readNextIgnoreEmptyLine(BufferedReader buff) throws IOException {
         buff.mark(10000);
         while (true) {
@@ -49,7 +35,7 @@ public class TextBasedFilterProfileLoader implements IFilterLoader {
         buff.reset();
     }
 
-    public void LoadFilter(InputStream is) throws IOException, InvalidFilterFile {
+    public void LoadFilter(FileInputStream is) throws IOException, InvalidFilterFile {
         BufferedReader buff = new BufferedReader(new InputStreamReader(is));
 
         do {
@@ -135,10 +121,10 @@ public class TextBasedFilterProfileLoader implements IFilterLoader {
     }
 
     public String removeFirstChar(String data) {
-        String out = "";
+        StringBuilder out = new StringBuilder();
         for (int i = 1; i < data.toCharArray().length; i++) {
-            out += data.charAt(i);
+            out.append(data.charAt(i));
         }
-        return out;
+        return out.toString();
     }
 }

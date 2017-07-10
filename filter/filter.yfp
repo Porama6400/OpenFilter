@@ -1,0 +1,54 @@
+enabled: true
+
+filters:
+  #ANTI PLUGIN STEALING
+  antipluginssteal:
+    enable: true
+    target: PLAYER
+    block_tab_complete: true
+    permissions:
+      - openfilter.admin
+    commands:
+      - pl
+      - bukkit:pl
+      - plugins
+      - bukkit:plugins
+    actions:
+      #- FAKE_NOCOMMAND
+	  
+      - CANCEL
+      - FAKE_PLUGINS Plugin1 Plugin2 Plugin3
+
+      
+  #ANTI PLUGIN & SERVER VERSION STEALING
+  antiversionsteal:
+    enable: true
+    target: PLAYER
+    block_tab_complete: true
+    permissions:
+      - openfilter.admin
+    commands:
+      - ver
+      - bukkit:ver
+      - version
+      - bukkit:version
+      - about
+      - bukkit:about
+      - icanhasbukkit
+    actions:
+      - FAKE_NOCOMMAND
+      
+  #ANTI /HELP
+  antihelp:
+    enable: true
+    target: PLAYER
+    block_tab_complete: true
+    permissions:
+      - openfilter.admin
+    commands:
+      -help
+      -bukkit:help
+      -?
+      -bukkit:?
+    actions:
+      - FAKE_NOCOMMAND

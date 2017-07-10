@@ -1,0 +1,24 @@
+enabled: true
+
+filters:
+  #ANTI PLUGIN & SERVER VERSION STEALER
+  antipluginsstealer:
+    enable: true
+    target: PLAYER
+    block_tab_complete: true
+    permissions:
+      - openfilter.admin
+    commands:
+      - ver
+      - bukkit:ver
+      - version
+      - bukkit:version
+      - about
+      - bukkit:about
+      - icanhasbukkit
+      - pl
+      - bukkit:pl
+      - plugins
+      - bukkit:plugins
+    actions:
+      - FAKE_NOCOMMAND

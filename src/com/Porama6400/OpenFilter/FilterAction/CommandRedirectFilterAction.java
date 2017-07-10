@@ -6,11 +6,8 @@ import org.bukkit.event.Cancellable;
 
 import java.util.List;
 
-/**
- * Created by Porama2 on 21/12/2016.
- */
 public class CommandRedirectFilterAction implements FilterAction {
-    String to;
+    private String to;
 
     public CommandRedirectFilterAction(String to) {
         this.to = to;
@@ -18,10 +15,10 @@ public class CommandRedirectFilterAction implements FilterAction {
 
     @Override
     public void run(CommandSender sender, String command, List<String> args, Cancellable event) {
-        String out = "/" + to;
+        StringBuilder out = new StringBuilder("/" + to);
         for (String s : args) {
-            out += " " + s;
+            out.append(" ").append(s);
         }
-        Bukkit.dispatchCommand(sender, out);
+        Bukkit.dispatchCommand(sender, out.toString());
     }
 }

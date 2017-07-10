@@ -14,7 +14,7 @@ import java.util.List;
 
 
 public class BasicCommandFilter extends Filter {
-    boolean blockTabComplete = false;
+    private boolean blockTabComplete = false;
     private List<String> commands;
 
     public BasicCommandFilter(List<String> commands, Boolean blockTabComplete, FilterTarget target, List<FilterAction> filterActions, List<Permission> perms) {
@@ -36,7 +36,7 @@ public class BasicCommandFilter extends Filter {
         this.blockTabComplete = blockTabComplete;
     }
 
-    public void updateTabCompleter() {
+    private void updateTabCompleter() {
         if (blockTabComplete) {
             for (String cmd : commands) {
                 PluginCommand plugincmd = Bukkit.getPluginCommand(cmd);

@@ -7,7 +7,7 @@ import org.bukkit.event.server.TabCompleteEvent;
  * Created by Porama2 on 4/1/2017.
  */
 public interface ITabBlocker {
-    public static ITabBlocker getTabBlocker() {
+    static ITabBlocker getTabBlocker() {
         try {
             Class.forName("org.bukkit.event.server.TabCompleteEvent");
             OpenFilterPlugin.getInstance().getLogger().info("TabCompleteBlocker mode : TabCompleteEvent");

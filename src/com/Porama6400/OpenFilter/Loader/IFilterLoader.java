@@ -1,9 +1,12 @@
 package com.Porama6400.OpenFilter.Loader;
 
+import com.Porama6400.OpenFilter.InvalidFilterFile;
 import com.Porama6400.OpenFilter.OpenFilterPlugin;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,5 +31,18 @@ public interface IFilterLoader {
         }));
     }
 
-    void load();
+    default void load() {
+        for (File file : getFiles()) {
+            try {
+                FileInputStream fis = new FileInputStream(file);
+                LoadFilter(fis);
+                fis.close();
+            } catch (Exception e) {
+                OpenFilterPlugin.getInstance().getLogger().warning("ERROR WHILE LOADING: " + file.getName());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    void LoadFilter(FileInputStream fis) throws IOException, InvalidFilterFile;
 }

@@ -4,6 +4,7 @@ import com.Porama6400.OpenFilter.Filters.Filter;
 import com.Porama6400.OpenFilter.Filters.FilterGen;
 import com.Porama6400.OpenFilter.Loader.IFilterLoader;
 import com.Porama6400.OpenFilter.Loader.TextBasedFilterProfileLoader;
+import com.Porama6400.OpenFilter.Loader.YamlFilterProfileLoader;
 import com.Porama6400.OpenFilter.Tab.ITabBlocker;
 import com.Porama6400.OpenFilter.Updater.UpdateChecker;
 import org.bukkit.Bukkit;
@@ -18,9 +19,10 @@ import java.util.List;
 
 public class OpenFilterPlugin extends JavaPlugin {
     private static OpenFilterPlugin plugin;
-    OpenFilterCommandListener commandListener;
-    IFilterLoader[] filterLoaders = {
-            new TextBasedFilterProfileLoader()
+    private OpenFilterCommandListener commandListener;
+    private IFilterLoader[] filterLoaders = {
+            new TextBasedFilterProfileLoader(),
+            new YamlFilterProfileLoader()
     };
     private List<Filter> filterList = new ArrayList<>();
     private ITabBlocker tabBlocker;
@@ -55,7 +57,7 @@ public class OpenFilterPlugin extends JavaPlugin {
         }
     }
 
-    public void reloadFilters() {
+    private void reloadFilters() {
         filterList = new ArrayList<>();
         for(IFilterLoader loader : filterLoaders){
             loader.load();

@@ -26,7 +26,7 @@ public class OpenFilterCommandListener implements Listener {
         onCommandHandler(e.getPlayer(), e.getMessage(), e);
     }
 
-    public void onCommandHandler(CommandSender sender, String command, Cancellable cancellable) {
+    private void onCommandHandler(CommandSender sender, String command, Cancellable cancellable) {
         List<String> args = null;
         if (command.contains(" ")) {
             args = new ArrayList<>(Arrays.asList(command.split(" ")));

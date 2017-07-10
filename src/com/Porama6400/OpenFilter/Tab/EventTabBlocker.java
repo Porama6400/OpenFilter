@@ -12,9 +12,6 @@ import org.bukkit.permissions.Permission;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Porama2 on 4/1/2017.
- */
 public class EventTabBlocker implements Listener, ITabBlocker {
 
     @EventHandler
@@ -43,7 +40,11 @@ public class EventTabBlocker implements Listener, ITabBlocker {
                         }
                     }
                 }
-                e.getCompletions().removeAll(toRemove);
+                if (toRemove.size() > 0) {
+                    ArrayList<String> comps = new ArrayList<>(e.getCompletions());
+                    comps.removeAll(toRemove);
+                    e.setCompletions(comps);
+                }
             }
         }
     }
