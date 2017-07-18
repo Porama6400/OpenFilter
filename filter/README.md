@@ -22,4 +22,4 @@
 #### File type ####
 
 ***.tbfp**  : Text based filter profile ([Click here for more detail](https://github.com/UnnamedCheese/OpenFilter/wiki/Text-Based-Filter-Profile---TBFP))
-***.yfp**  : YAML based filter profile ([Example - Click here](https://raw.githubusercontent.com/UnnamedCheese/OpenFilter/master/filter/filter.yfp))
+***.yfp**  : YAML based filter profile ([Example - Click here](https://raw.githubusercontent.com/UnnamedCheese/OpenFilter/master/filter/example.yfp))
