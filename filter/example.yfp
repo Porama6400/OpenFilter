@@ -1,0 +1,17 @@
+enabled: true
+
+filters:
+  #ANTI PLUGIN STEALING
+  anyfilternameyouwant123:
+    enable: true
+    target: PLAYER
+    block_tab_complete: true
+    permissions:
+      - openfilter.admin
+    commands:
+      - pl
+      - bukkit:pl
+      - plugins
+      - bukkit:plugins
+    actions:
+      - FAKE_NOCOMMAND
