@@ -15,7 +15,7 @@ filters:
       - bukkit:plugins
     actions:
       #- FAKE_NOCOMMAND
-	  
+      
       - CANCEL
       - FAKE_PLUGINS Plugin1 Plugin2 Plugin3
 
