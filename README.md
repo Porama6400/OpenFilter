@@ -9,4 +9,4 @@ Open-source command blocking plugin (Chat filtering in future)
 
 ----------
 
-[![JProfiler](https://www.ej-technologies.com/images/product_banners/jprofiler_small.png) The Best Java Profiler](http://www.ej-technologies.com/products/jprofiler/overview.html)
+[![JProfiler](https://www.ej-technologies.com/images/product_banners/jprofiler_small.png) The best Java profiler I've ever use, It helped me a lot with their Open-source license](http://www.ej-technologies.com/products/jprofiler/overview.html)
